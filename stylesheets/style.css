@@ -1,0 +1,105 @@
+/**
+ * jSel is “Visual selection of elements for jQuery framework”.
+ *
+ * @author demorfi <demorfi@gmail.com>
+ * @version 1.0
+ * @source https://github.com/demorfi/jsel
+ * @license http://opensource.org/licenses/MIT Licensed under MIT License
+ */
+
+*
+{
+    box-sizing : border-box;
+    margin     : 0;
+    padding    : 0;
+}
+
+body
+{
+    margin     : 0 auto;
+    width      : 950px;
+    background : url("data:image/gif;base64,R0lGODlhCAAIAJEAAMzMzP///////wAAACH5BAEHAAIALAAAAAAIAAgAAAINhG4nudroGJBRsYcxKAA7") #f1f1f1;
+}
+
+.grid
+{
+    margin     : 0;
+    background : rgba(200, 200, 200, .30);
+}
+
+.grid:after
+{
+    display : table;
+    clear   : both;
+    content : "";
+}
+
+[class*='col-']
+{
+    float          : left;
+    padding-right  : 20px;
+    padding-bottom : 20px;
+}
+
+.grid [class*='col-']:last-of-type
+{
+    padding-right : 0;
+}
+
+.col-2-3
+{
+    width : 70.7%;
+}
+
+.col-1-4
+{
+    width : 25%;
+}
+
+.col-1-1
+{
+    width : 98%;
+}
+
+.grid-pad
+{
+    padding : 20px 0 0 20px;
+}
+
+.grid-pad [class*='col-']:last-of-type
+{
+    padding-right : 20px;
+}
+
+.module
+{
+    padding    : 20px;
+    background : rgba(179, 222, 0, .70);
+    color      : #fff;
+}
+
+body:not(.jsel-selector)
+{
+    margin : 100px auto 0;
+}
+
+body:not(.jsel-selector) > .grid,
+body:not(.jsel-selector) > .title:not(#build),
+.jsel-selector > #build
+{
+    display : none;
+}
+
+.title
+{
+    margin     : 5px 0;
+    color      : #8b8b8b;
+    text-align : right;
+    font       : bold 12px Arial, Helvetica;
+}
+
+.title a
+{
+    color  : #0080cf;
+    cursor : pointer !important;
+}

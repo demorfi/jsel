@@ -1,0 +1,101 @@
+/*!
+ * jSel is “Visual selection of elements for jQuery framework”.
+ *
+ * @author demorfi <demorfi@gmail.com>
+ * @version 1.0
+ * @source https://github.com/demorfi/jsel
+ * @license http://opensource.org/licenses/MIT Licensed under MIT License
+ */
+@import "compass/css3";
+
+.jsel-selector *
+{
+  cursor : default !important;
+}
+
+.jsel-wrapper
+{
+  display : none;
+  font     :
+  {
+    family : Arial, Helvetica;
+    size   : small;
+  }
+
+  .jsel-selection-left,
+  .jsel-selection-right,
+  .jsel-selection-top,
+  .jsel-selection-bottom
+  {
+    position    : absolute;
+    top         : 0;
+    left        : 0;
+    z-index     : 99998;
+    background  : rgba(0, 149, 255, .89);
+    color       : #fff;
+    text-shadow : 0 -1px 0 #5d5d5d;
+    font-weight : bold;
+    font-size   : 12px;
+    line-height : 12px;
+  }
+
+  .jsel-selection-label,
+  .jsel-selection-events
+  {
+    @extend .jsel-selection-left;
+    display : none;
+    padding : 4px 5px;
+  }
+
+  .jsel-selection-label
+  {
+    min-width : 100px;
+  }
+
+  .jsel-selection-events
+  {
+    z-index    : 99999;
+    width      : 20px;
+    text-align : center;
+    cursor     : pointer !important;
+
+    *
+    {
+      cursor : pointer !important;
+    }
+
+    &:before
+    {
+      content   : "\2261";
+      font-size : 14px;
+    }
+
+    > div
+    {
+      position : relative;
+    }
+
+    .jsel-events-items
+    {
+      position        : absolute;
+      top             : 0;
+      right           : 0;
+      display         : none;
+      width           : 150px;
+      background      : #0095ff;
+      list-style-type : none;
+      text-align      : left;
+      white-space     : nowrap;
+
+      li
+      {
+        padding : 5px 10px;
+
+        &:hover
+        {
+          background : #006ab5;
+        }
+      }
+    }
+  }
+}
